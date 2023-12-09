@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Test - Results</title>
+</head>
+<body>
+    <h1>Results Page</h1>
+    <p>Correct Answers: {{ correct_answers_count }} / {{ total_questions }}</p>
+    {% if passed_test %}
+        <p style="color: green;">Congratulations! You passed the test.</p>
+    {% else %}
+        <p style="color: red;">Sorry, you did not pass the test.</p>
+    {% endif %}
+</body>
+</html>

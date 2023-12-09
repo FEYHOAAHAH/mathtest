@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Test</title>
+</head>
+<body>
+    <h1>Welcome to Math Test!</h1>
+    <a href="{% url 'question_page' difficulty='easy' %}">Start Easy Test</a><br>
+    <a href="{% url 'question_page' difficulty='medium' %}">Start Medium Test</a><br>
+    <a href="{% url 'question_page' difficulty='hard' %}">Start Hard Test</a><br>
+    <a href="{% url 'results_page' %}">View Results</a>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Test - Question</title>
+</head>
+<body>
+    <h1>Question: {{ question.text }}</h1>
+    <form method="post" action="{% url 'question_page' difficulty=question.difficulty %}">
+        {% csrf_token %}
+        <input type="radio" name="user_answer" value="{{ question.option1 }}"> {{ question.option1 }}<br>
+        <input type="radio" name="user_answer" value="{{ question.option2 }}"> {{ question.option2 }}<br>
+        <input type="radio" name="user_answer" value="{{ question.option3 }}"> {{ question.option3 }}<br>
+        <input type="radio" name="user_answer" value="{{ question.option4 }}"> {{ question.option4 }}<br>
+        <button type="submit">Submit Answer</button>
+    </form>
+    {% if user_answer %}
+        <p>Your answer: {{ user_answer }}</p>
+        {% if is_correct %}
+            <p style="color: green;">Correct!</p>
+        {% else %}
+            <p style="color: red;">Incorrect. Correct answer is {{ question.correct_answer }}</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
